@@ -858,6 +858,12 @@ section {
   z-index: 2;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .hero .container {
   position: relative;
   z-index: 3;
