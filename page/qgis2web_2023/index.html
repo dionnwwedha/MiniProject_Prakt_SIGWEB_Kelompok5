@@ -508,9 +508,11 @@
                         <td>' + (feature.properties['Lokasi'] !== null ? autolinker.link(feature.properties['Lokasi'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
+            layer.bindPopup(popupContent, {
+                maxWidth: 300, 
+                maxHeight: 200, 
+                autoPan: true, });
+            }
         function style_Kantin_UGMkantin_ugm_3_0() {
             return {
                 pane: 'pane_Kantin_UGMkantin_ugm_3',
@@ -529,11 +531,9 @@
         }
         function icon_Kantin_UGMkantin_ugm_3(feature, latlng) {
         var customIcon = L.icon({
-        iconUrl: 'logo.png', 
+        iconUrl: 'icon.png', 
         iconSize: [32, 32],    
     });
-
-    // Create a marker with the custom icon
     return L.marker(latlng, {
         icon: customIcon
     });
