@@ -11,44 +11,52 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
 	    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-	
+        <link rel="stylesheet" href="leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.css" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <!-- memanggil bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
         <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+        <link rel = "icon" href = "LOGOUGM.png" 
+        type = "image/x-icon">
         <style>
-        #map {
-            width: 100%;
-            height: 762px;
+        html, body, #map {
+        height: 100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        }
+        .navbar-brand {
+        font-family: 'Montserrat SemiBold'; 
         }
         </style>
-        <title>Peta persebaran</title>
+        <title>Persebaran Kantin dan Minimarket di UGM</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand">Peta Kantin</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #e84545">
+            <div class="container">
+                <a class="navbar-brand" href="#"></a>
+                <img src="LOGOUGM.png" alt="Bootstrap" width="30" height="30" /></a>
+                <a class="navbar-brand data-bs-toggle" style="color:white" href="#">Peta Rute dan Persebaran Kantin di Lingkungan UGM </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
           
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="../index.html">Halaman Utama <span class="sr-only">(current)</span></a>
-                </li>
-               
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item active">
+                        <a class="btn btn-outline-light text-light mx-2" href="../index.html">Halaman Utama <span class="sr-only">(current)</span></a>
+                      </li>
+                    </ul>
+                  </div>
               </ul>
+
               <form class="form-inline my-2 my-lg-0">
                 <button 
-                  class="btn btn-outline-success my-2 my-sm-0" 
-                  onclick="cari()"
-                  >
-                     Lokasi saya
-                </button>
+                  class="btn btn-outline-light my-2 my-sm-0" 
+                  onclick="cari()">Lokasi Saya</button>
               </form>
             </div>
           </nav>
@@ -67,8 +75,8 @@
         <script src="data/Kantin_UGMkantin_ugm_3.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-7.776338765988347,110.36853773607224],[-7.762020516596451,110.38914928084908]]);
+            center: [-7.76826,110.37847], zoom: 16, zoomControl:true, maxZoom:28, minZoom:1
+        });
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -349,14 +357,14 @@
             return {
                 pane: 'pane_Bangunan_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(250,128,114,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 0.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(141,90,153,1.0)',
+                fillColor: 'rgba(250,128,114,1.0)',
                 interactive: false,
             }
         }
@@ -450,11 +458,11 @@
             return {
                 pane: 'pane_Jalan_2',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(245,245,245,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 3.0,
                 fillOpacity: 0,
                 interactive: false,
             }
@@ -519,6 +527,30 @@
                 interactive: true,
             }
         }
+        function icon_Kantin_UGMkantin_ugm_3(feature, latlng) {
+        var customIcon = L.icon({
+        iconUrl: 'logo.png', 
+        iconSize: [32, 32],    
+    });
+
+    // Create a marker with the custom icon
+    return L.marker(latlng, {
+        icon: customIcon
+    });
+}
+
+var layer_Kantin_UGMkantin_ugm_3 = new L.geoJson(json_Kantin_UGMkantin_ugm_3, {
+    attribution: '',
+    interactive: true,
+    dataVar: 'json_Kantin_UGMkantin_ugm_3',
+    layerName: 'layer_Kantin_UGMkantin_ugm_3',
+    pane: 'pane_Kantin_UGMkantin_ugm_3',
+    pointToLayer: icon_Kantin_UGMkantin_ugm_3,  // Use the custom icon function
+    onEachFeature: pop_Kantin_UGMkantin_ugm_3
+});
+
+map.addLayer(layer_Kantin_UGMkantin_ugm_3);
+
         map.createPane('pane_Kantin_UGMkantin_ugm_3');
         map.getPane('pane_Kantin_UGMkantin_ugm_3').style.zIndex = 403;
         map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
@@ -529,14 +561,8 @@
             layerName: 'layer_Kantin_UGMkantin_ugm_3',
             pane: 'pane_Kantin_UGMkantin_ugm_3',
             onEachFeature: pop_Kantin_UGMkantin_ugm_3,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Kantin_UGMkantin_ugm_3_0(feature));
-            },
-        });
+            pointToLayer: icon_Kantin_UGMkantin_ugm_3,
+            });
         bounds_group.addLayer(layer_Kantin_UGMkantin_ugm_3);
         map.addLayer(layer_Kantin_UGMkantin_ugm_3);
         setBounds();
@@ -574,12 +600,11 @@
         var bangunan = L.layerGroup([layer_Bangunan_1]);
 
         var overlayMaps = {
-            "Titik kantin": titik,
+            "Titik Sebaran": titik,
             "Jalan": jalan,
             "Bangunan": bangunan
         }
         L.control.layers(baseMaps, overlayMaps).addTo(map);
-
 
         L.Control.geocoder().addTo(map);
         function cari(){
@@ -598,7 +623,48 @@
             map.on('locationfound', onLocationFound);
             
         }
+        var startIcon = L.icon({
+    iconUrl: 'foto/start.png', 
+    iconSize:[30,50],
+    iconAnchor:[12,41]
+    });
+    var destinationIcon = L.icon({
+    iconUrl: 'foto/arrived.png', 
+    iconSize: [50,30], 
+    iconAnchor: [12, 41],
+    });
+    L.Routing.control({
+    waypoints: [{
+        latLng: L.latLng([-7.75896,110.37810]),
+        name: "Start"},
+        {
+        latLng: L.latLng([-7.76388,110.37280]),
+        name: "Destination"}],
+        routeWhileDragging: true,
+        routeDragTimeout: 250,
+        lineOptions: {styles: [{ color: 'green', opacity: 1, weight: 3 }]},
+            collapsible: true,
+            show: false,
+            createMarker: function(i, waypoint, n) 
+            {if (i === 0 || i === n - 1) {return L.marker(waypoint.latLng, 
+                {draggable: true,icon: i === 0 ? startIcon : destinationIcon,
+                title: waypoint.name});} 
+            else {return L.marker(waypoint.latLng, 
+                {draggable: true,
+                title: waypoint.name});}
+            },
+            summaryTemplate: '<div class="start-end-summary"><b>{name}</b></div>'
+            }).addTo(map) 
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{
+        maxZoom: 25,
+        attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>contributors'
+    }).addTo(map);  
+    var printer = L.control.browserPrint().addTo(map);
+    printer.on('beforePrint', function () {
+    printer.printMap('Print', 'A4Portrait');});
+    document.getElementById("printButton").addEventListener("click", function () {
+    printer.print();
+});
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
 </html>
