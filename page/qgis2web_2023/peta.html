@@ -43,11 +43,10 @@
             <div class="container">
                 <a class="navbar-brand" href="#"></a>
                 <img src="LOGOUGM.png" alt="Bootstrap" width="30" height="30" /></a>
-                <a class="navbar-brand data-bs-toggle text-white" style="color:white" href="#">Peta Rute dan Persebaran Kantin di Lingkungan UGM </a>
+                <a class="navbar-brand data-bs-toggle text-white" style="color:white" href="#">Peta Rute dan Persebaran Kantin Minimarket di Lingkungan UGM </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-          
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item active">
@@ -564,9 +563,6 @@ map.addLayer(layer_Kantin_UGMkantin_ugm_3);
 map.createPane('pane_Kantin_UGMkantin_ugm_3');
 map.getPane('pane_Kantin_UGMkantin_ugm_3').style.zIndex = 403;
 map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
-
-// You may need to adjust the code related to 'bounds_group' and 'setBounds()' based on your specific requirements.
-
         // sCRIPT PETA TAMBAHAN
         var esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -619,9 +615,7 @@ map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
 
                 L.circle(e.latlng, radius).addTo(map);
             }
-
             map.on('locationfound', onLocationFound);
-            
         };
         var printer = L.control.browserPrint().addTo(map);
         printer.on('beforePrint', function () {
