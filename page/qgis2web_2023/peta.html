@@ -623,17 +623,15 @@ map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
             map.on('locationfound', onLocationFound);
             
         };
+        var printer = L.control.browserPrint().addTo(map);
+        printer.on('beforePrint', function () {
+        printer.printMap('Print', 'A4Portrait');
+        });
         function initializeMapPrinting(map) {
-  var printer = L.control.browserPrint().addTo(map);
-  printer.on('beforePrint', function () {
-    printer.printMap('Print', 'A4Portrait');
-  });
-
-  document.getElementById("printButton").addEventListener("click", function () {
-    printer.print();
-  });
-}
-        
+        document.getElementById("printButton").addEventListener("click", function () {
+        printer.print();
+        });
+        } 
         </script>
     </body>
 </html>
