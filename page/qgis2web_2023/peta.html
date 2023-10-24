@@ -653,29 +653,29 @@ map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
             summaryTemplate: '<div class="start-end-summary"><b>{name}</b></div>',
             fitSelectedRoutes: false}).addTo(map) ;
 
-            var measureControl = new L.Control.Measure({
+        var measureControl = new L.Control.Measure({
         position: 'topleft',
         primaryLengthUnit: 'meters',
         secondaryLengthUnit: 'miles',
         primaryAreaUnit: 'sqmeters',
         secondaryAreaUnit: 'sqmiles'
-    });
-    measureControl.addTo(map);
-    document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-    .innerHTML = '';
-    document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-    .className += ' fas fa-ruler';
-    var osmGeocoder = new L.Control.Geocoder({
-        collapsed: true,
-        position: 'topright',
-        text: 'Cari',
-        title: 'Testing'
-    }).addTo(map);
-    document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-    .className += ' fa fa-search';
-    document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-    .title += 'Cari Lokasi';
-    setBounds();
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topright',
+            text: 'Cari',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Cari Lokasi';
+        setBounds();
         </script>
     </body>
 </html>
