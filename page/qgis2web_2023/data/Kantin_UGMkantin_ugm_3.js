@@ -6,7 +6,7 @@ var json_Kantin_UGMkantin_ugm_3 = {
         "properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},
         "features":[
             {"type":"Feature",
-            "properties":{"Nama Lokasi":"Food Court Plaza FT","Foto":"IMG-20231012-WA0015.jpg","Deskripsi":"Kantin baru Fakultas Teknik UGM yang berlokasi di gedung SGLC UGM. Kantin ini memiliki berbagai jenis makanan mulai dari makanan berat sampai makanan ringan","Jam Buka":"09.00 - 16.00","Jumlah Stands":"5","Lokasi":"https://maps.app.goo.gl/gd4xWoknC1QZC28f9"},
+            "properties":{"Nama Lokasi":"Food Court Plaza FT","Foto":"IMG-20231012-WA0015.jpg","Deskripsi":"Kantin baru Fakultas Teknik UGM yang berlokasi di gedung SGLC UGM. Kantin ini memiliki berbagai jenis makanan mulai dari makanan berat sampai makanan ringan","Jam Buka":"09.00 - 16.00","Jumlah Stands":"5","Lokasi":"<a href='https://maps.app.goo.gl/gd4xWoknC1QZC28f9'>GoogleMaps Food Court Plaza FT</a>"},
             "geometry":{"type":"Point","coordinates":[110.3724661,-7.7652318]}},
             {"type":"Feature",
             "properties":{"Nama Lokasi":"Kantin DTMI","Foto":"IMG-20231012-WA0016.jpg","Deskripsi":"Kantin ini berada di Departemen Teknik Mesin dan Industri, kantin ini baru dibuka pada tahun 2023 semester ganjil","Jam Buka":"07.00 - 16.00","Jumlah Stands":"2","Lokasi":"https://maps.app.goo.gl/vr3JjcRhkwrQKqv9A"},
