@@ -84,5 +84,5 @@ var json_Kantin_UGMkantin_ugm_3 = {
             "properties":{"Nama Lokasi":"BNI Co-Working Space ","Foto":"BNI Working Space.jpg","Deskripsi":"BNI Co-Working Space menyediakan beraneka ragam kopi yang dapat dinikmati oleh civitas akademika dan mahasiswa. Co Working ini terletak di area yang strategis yaitu berada di dekat GSP, Perpusat, Balairung, FEB, dan Fisipol","Jam Buka":"08.00-19.00","Jumlah Stands":"1","Lokasi":"<a href='https://maps.app.goo.gl/huvC3mcPumR5vCfz5'>Klik untuk melihat lokasi</a>"},
             "geometry":{"type":"Point","coordinates":[110.378908649949494,-7.770074849546265]}},
             {"type":"Feature",
-            "properties":{"Nama Lokasi":"KANTIN EB","Foto":"Kantin FEB.jpg","Deskripsi":"Kantin EB mulai beroperasi kembali setelah dua tahun tidak menyajikan santapan bagi civitas akademika dan mahasiswa. Kantin EB berada di lantai 1 Sayap Barat FEB UGM.","Jam Buka":"08.00-16.00","Jumlah Stands":"1","Lokasi":"-"},
+            "properties":{"Nama Lokasi":"KANTIN EB","Foto":"Kantin FEB.jpg","Deskripsi":"Kantin EB mulai beroperasi kembali setelah dua tahun tidak menyajikan santapan bagi civitas akademika dan mahasiswa. Kantin EB berada di lantai 1 Sayap Barat FEB UGM.","Jam Buka":"08.00-16.00","Jumlah Stands":"3","Lokasi":"-"},
             "geometry":{"type":"Point","coordinates":[110.378731031175349,-7.770707769523639]}}]}
