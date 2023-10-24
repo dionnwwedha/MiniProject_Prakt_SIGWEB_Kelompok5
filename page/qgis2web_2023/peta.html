@@ -366,14 +366,14 @@
             return {
                 pane: 'pane_Bangunan_1',
                 opacity: 1,
-                color: 'rgba(250,128,114,1.0)',
+                color: 'rgba(206,190,165,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 0.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(250,128,114,1.0)',
+                fillColor: 'rgba(206,190,165,1.0)',
                 interactive: false,
             }
         }
@@ -467,7 +467,7 @@
             return {
                 pane: 'pane_Jalan_2',
                 opacity: 1,
-                color: 'rgba(245,245,245,1.0)',
+                color: 'rgba(51,36,33,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -632,14 +632,14 @@ map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
         });
         L.Routing.control({
          waypoints: [{
-        latLng: L.latLng([-7.75896,110.37810]),
+        latLng: L.latLng([-7.76388,110.37280]),
         name: "Start"},
         {
-        latLng: L.latLng([-7.76388,110.37280]),
+        latLng: L.latLng([-7.76952648,110.37807238]),
         name: "Destination"}],
         routeWhileDragging: true,
         routeDragTimeout: 250,
-        lineOptions: {styles: [{ color: 'blue', opacity: 1, weight: 5 }]},
+        lineOptions: {styles: [{ color: 'yellow', opacity: 1, weight: 5 }]},
             collapsible: true,
             show: false,
             createMarker: function(i, waypoint, n) 
@@ -650,8 +650,8 @@ map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
                 {draggable: true,
                 title: waypoint.name});}
             },
-            summaryTemplate: '<div class="start-end-summary"><b>{name}</b></div>'
-            }).addTo(map) 
+            summaryTemplate: '<div class="start-end-summary"><b>{name}</b></div>',
+            fitSelectedRoutes: false}).addTo(map) ;
 
             var measureControl = new L.Control.Measure({
         position: 'topleft',
