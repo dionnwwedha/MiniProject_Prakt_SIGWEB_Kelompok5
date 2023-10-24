@@ -651,7 +651,18 @@ map.getPane('pane_Kantin_UGMkantin_ugm_3').style['mix-blend-mode'] = 'normal';
             summaryTemplate: '<div class="start-end-summary"><b>{name}</b></div>'
             }).addTo(map) 
 
-        L.control.measure().addTo(map);
+            var measureControl = new L.Control.Measure({
+        position: 'topleft',
+        primaryLengthUnit: 'meters',
+        secondaryLengthUnit: 'miles',
+        primaryAreaUnit: 'sqmeters',
+        secondaryAreaUnit: 'sqmiles'
+    });
+    measureControl.addTo(map);
+    document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+    .innerHTML = '';
+    document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+    .className += ' fas fa-ruler';
         </script>
     </body>
 </html>
